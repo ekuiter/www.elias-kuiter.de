@@ -110,7 +110,7 @@ export default () => (
       <h3>Vita</h3>
       <table>
         <tbody>
-          {vita.map((vitaEntry, idx) => <VitaEntry key={idx} {...vitaEntry} />)}
+          {vita.map(vitaEntry => <VitaEntry key={vitaEntry.title + vitaEntry.href} {...vitaEntry} />)}
         </tbody>
       </table>
     </section>
@@ -118,14 +118,14 @@ export default () => (
     <section id="publikationen">
       <h3>Publikationen</h3>
       <ul>
-        {publications.map((publication, idx) => <Publication key={idx} {...publication} />)}
+        {publications.map(publication => <Publication key={publication.title + publication.href} {...publication} />)}
       </ul>
     </section>
 
     <section>
       <h3>Auszeichnungen &amp; Förderung</h3>
       <ul>
-        {awards.map((awards, idx) => <Award key={idx} {...awards} />)}
+        {awards.map(award => <Award key={award.title + award.href} {...award} />)}
       </ul>
     </section>
 
@@ -139,7 +139,7 @@ export default () => (
       <ul className={styles.portfolio}>
         {portfolio
           .sort(({year: yearA}, {year: yearB}) => yearB - yearA)
-          .map((project, idx) => <Project key={idx} {...project} />)}
+          .map(project => <Project key={project.title + project.href} {...project} />)}
       </ul>
     </section>
     
@@ -151,7 +151,7 @@ export default () => (
       </p>
 
       <ul className={styles.tools}>
-        {tools.map((tool, idx) => <Tool key={idx} {...tool} />)}
+        {tools.map(tool => <Tool key={tool.title + tool.href} {...tool} />)}
       </ul>
     </section>
 
