@@ -35,4 +35,9 @@ table tr:last-child td {
     .layout {
         padding-top: 0;
     }
+
+    .layout section::before {
+        height: 3px;
+        margin: 0;
+    }
 }
