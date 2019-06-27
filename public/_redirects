@@ -1,16 +1,13 @@
-/apps/ebersuche/online-suche            http://dev.elias-kuiter.de/ebersuche/
-/apps/uvr2web/troubleshooting           https://goo.gl/forms/WPyWEBbycyjTX6Lf2
-/facharbeit                             /sonstiges/facharbeit
-/fosd19-slides                          https://docs.google.com/presentation/d/1XnYuc9oO91vhFAdmwj9mqq7KERfDvCCbzYtWShbtfxw
-/piano                                  http://dl.elias-kuiter.de/piano/
-/sonstiges/facharbeit/ajax              http://dev.elias-kuiter.de/ajax/
-/sonstiges/facharbeit/ajax-lesen        http://dev.elias-kuiter.de/ajax/Interaktive Webanwendungen mit AJAX.pdf
-/sonstiges/facharbeit/anhang            http://dl.elias-kuiter.de/anhang.zip
-/sonstiges/facharbeit/facharbeit-lesen  http://dl.elias-kuiter.de/facharbeit.pdf
-/sonstiges/produktlinien/feature-php    https://uvr2web.de/feature-php/feature-php-slides.pdf
+/websites/*                             http://www-2015.elias-kuiter.de/websites/:splat
+/apps/*                                 http://www-2015.elias-kuiter.de/apps/:splat
+/elektronik/*                           http://www-2015.elias-kuiter.de/apps/:splat
+/sonstiges/*                            http://www-2015.elias-kuiter.de/apps/:splat
+/facharbeit                             http://www-2015.elias-kuiter.de/sonstiges/facharbeit
+/piano                                  http://piano.elias-kuiter.de/
 /splc18-pclocator                       https://dl.elias-kuiter.de/splc18-pclocator.pdf
 /splc18-pclocator-slides                https://dl.elias-kuiter.de/splc18-pclocator-slides.pdf
 /splc18-uvr2web                         https://dl.elias-kuiter.de/splc18-uvr2web.pdf
+/fosd19-slides                          https://docs.google.com/presentation/d/1XnYuc9oO91vhFAdmwj9mqq7KERfDvCCbzYtWShbtfxw
 /splc19-foundations                     https://dl.elias-kuiter.de/splc19-foundations.pdf
 /splc19-foundations-artifact            https://dl.elias-kuiter.de/splc19-foundations-artifact.pdf
 /thesis                                 https://dl.elias-kuiter.de/thesis.pdf
