@@ -1,7 +1,7 @@
 /websites/*                             http://www-2015.elias-kuiter.de/websites/:splat
 /apps/*                                 http://www-2015.elias-kuiter.de/apps/:splat
-/elektronik/*                           http://www-2015.elias-kuiter.de/apps/:splat
-/sonstiges/*                            http://www-2015.elias-kuiter.de/apps/:splat
+/elektronik/*                           http://www-2015.elias-kuiter.de/elektronik/:splat
+/sonstiges/*                            http://www-2015.elias-kuiter.de/sonstiges/:splat
 /facharbeit                             http://www-2015.elias-kuiter.de/sonstiges/facharbeit
 /ueber-mich                             /
 /piano                                  http://piano.elias-kuiter.de/
