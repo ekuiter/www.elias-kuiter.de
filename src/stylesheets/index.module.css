@@ -3,6 +3,7 @@
     list-style: none;
     flex-wrap: wrap;
     margin: 0 -12px 0 -6px;
+    justify-content: center;
 }
 
 .portfolio li {
@@ -16,7 +17,6 @@
     margin: 0 auto;
     width: 66%;
     align-items: center;
-    justify-content: center;
 }
 
 .tools li {
@@ -97,7 +97,7 @@ input[type=submit]:hover {
         width: 50%;
     }
 
-    .tools {
+    .portfolio, .tools {
         width: 100%;
         justify-content: initial;
     }
