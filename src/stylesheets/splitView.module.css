@@ -1,0 +1,17 @@
+.splitView > div:first-child {
+    float: left;
+    width: calc(50% - 10px);
+    margin-right: 20px;
+}
+
+.splitView > div:last-child {
+    clear: both;
+}
+
+@media screen and (max-width: 720px) {
+    .splitView > div:first-child {
+        float: none;
+        width: auto;
+        margin-right: 0;
+    }
+}

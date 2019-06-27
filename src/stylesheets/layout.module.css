@@ -1,0 +1,38 @@
+.layout {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 1rem;
+    padding-top: 4rem;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.layout h1, .layout h2, .layout h3, .layout h4, .layout h5, .layout h6, .layout .space {
+    margin-top: 2rem;
+    margin-bottom: 0.9rem;
+}
+
+.layout p {
+    margin-bottom: 0.9rem;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+.layout section::before {
+    content: "";
+    display: block;
+    height: 65px;
+    margin: -65px 0 0;
+}
+
+.layout section :last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 512px) {
+    .layout {
+        padding-top: 0;
+    }
+}
