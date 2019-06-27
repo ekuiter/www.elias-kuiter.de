@@ -138,7 +138,8 @@ export default () => (
 
       <ul className={styles.portfolio}>
         {portfolio
-          .sort(({year: yearA}, {year: yearB}) => yearB - yearA)
+          .sort(({year: yearA, title: titleA}, {year: yearB, title: titleB}) =>
+            (yearB + titleB).localeCompare(yearA + titleA))
           .map(project => <Project key={project.title + project.href} {...project} />)}
       </ul>
     </section>
