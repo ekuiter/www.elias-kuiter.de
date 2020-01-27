@@ -76,5 +76,17 @@ export default [
     href: 'http://db.automaten-wilmering.de',
     image: 'wilmering-datenbank.jpg',
     year: 2013
+  },
+  {
+    title: 'Ebersuche Weser-Ems',
+    href: 'https://play.google.com/store/apps/details?id=ek.ebersuche&hl=de',
+    image: 'ebersuche.jpg',
+    year: 2012
+  },
+  {
+    title: 'Pignap',
+    href: 'http://pignap.com',
+    image: 'pignap.jpg',
+    year: 2020
   }
 ];

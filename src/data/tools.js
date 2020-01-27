@@ -43,6 +43,11 @@ export default [
     className: styles.large
   },
   {
+    title: 'Python',
+    href: 'https://www.python.org',
+    image: 'python.png'
+  },
+  {
     title: 'Ruby',
     href: 'https://www.ruby-lang.org',
     image: 'ruby.png'
@@ -83,5 +88,10 @@ export default [
     href: 'https://common-lisp.net',
     image: 'commonlisp.png',
     className: styles.large
+  },
+  {
+    title: 'Haskell',
+    href: 'https://www.haskell.org',
+    image: 'haskell.png'
   }
 ];
