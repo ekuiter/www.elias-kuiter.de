@@ -4,13 +4,14 @@ export default [
     title: 'Studium Informatik (Master of Science) an der Otto-von-Guericke-Universität Magdeburg'
   },
   {
-    from: 'Januar 2019',
+    from: '01.2019',
+    to: '12.2019',
     title: 'HiWi: Betreuung des Testbed in der AG Communication and Networked Systems'
   },
   {
     from: '11.2018',
     to: '03.2019',
-    title: 'Betriebspraktikum bei der METOP GmbH'
+    title: 'Bachelorpraktikum bei der METOP GmbH'
   },
   {
     from: '04.2018',
