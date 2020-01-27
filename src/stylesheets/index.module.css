@@ -1,3 +1,11 @@
+.doi {
+    font-size: 0.66em;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-left: 5px;
+}
+
 .portfolio, .tools {
     display: flex;
     list-style: none;

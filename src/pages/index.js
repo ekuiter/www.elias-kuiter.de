@@ -4,6 +4,7 @@ import Image from '../components/image';
 import Navigation from '../components/navigation';
 import styles from '../stylesheets/index.module.css';
 import layoutStyles from '../stylesheets/layout.module.css';
+import blackLinksStyles from '../stylesheets/blackLinks.module.css';
 import { Link } from 'gatsby';
 import vita from '../data/vita';
 import publications from '../data/publications';
@@ -31,7 +32,7 @@ const VitaEntry = ({ from, to, title, href, meta }) => (
   </tr>
 );
 
-const Publication = ({ authors, title, href, publishedIn, meta }) => (
+const Publication = ({ authors, title, href, publishedIn, meta, doi }) => (
   <li>
     {authors}.
     {' '}
@@ -44,6 +45,12 @@ const Publication = ({ authors, title, href, publishedIn, meta }) => (
         : meta
             ? <span>{meta}.</span>
             : null}
+    {' '}
+    {doi
+      ? <span className={`${styles.doi} ${blackLinksStyles.blackLinks}`}>
+          <a href={`https://doi.org/${doi}`}>{doi}</a>
+        </span>
+      : null}
   </li>
 );
 
