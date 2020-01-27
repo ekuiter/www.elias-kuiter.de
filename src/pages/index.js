@@ -169,8 +169,7 @@ export default () => (
       <p>
         Haben Sie eine Frage zu einem meiner Projekte oder ein anderes Anliegen?
         Dann kontaktieren Sie mich über das folgende Formular &#8211;
-        oder senden Sie mir eine E-Mail an <a href="mailto:info@elias-kuiter.de">info@elias-kuiter.de</a>
-        oder <a href="mailto:kuiter@ovgu.de">kuiter@ovgu.de</a>.
+        oder senden Sie mir eine E-Mail an <a href="mailto:info@elias-kuiter.de">info@elias-kuiter.de</a> oder <a href="mailto:kuiter@ovgu.de">kuiter@ovgu.de</a>.
       </p>
 
       <form name="contact" method="POST" data-netlify="true">
