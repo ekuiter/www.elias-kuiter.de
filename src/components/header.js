@@ -14,7 +14,8 @@ export default ({ siteTitle }) => (
         { title: 'Vita', to: '/#vita', scrollspy: 'vita' },
         { title: 'Publikationen', to: '/#publikationen', scrollspy: 'publikationen' },
         { title: 'Portfolio', to: '/#portfolio', scrollspy: 'portfolio' },
-        { title: 'Kontakt', to: '/#kontakt', scrollspy: 'kontakt' }
+        { title: 'Kontakt', to: '/#kontakt', scrollspy: 'kontakt' },
+        { title: '🎵', href: 'https://piano.elias-kuiter.de' }
       ]} />
     </div>
   </header>

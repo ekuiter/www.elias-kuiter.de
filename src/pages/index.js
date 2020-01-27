@@ -107,7 +107,7 @@ export default () => (
 
       <p>
         In meiner Freizeit lese ich gern und spiele Klavier.
-        Ab und zu erstelle ich Klaviernoten zu Liedern, die auf meinem <a href="https://youtube.com/ekuiter">Youtube-Kanal</a>
+        Ab und zu erstelle ich Klaviernoten zu Liedern, die auf meinem <a href="https://youtube.com/ekuiter">YouTube-Kanal</a>
         {' '}
         und meiner <a href="https://piano.elias-kuiter.de">Piano-Webseite</a> zu sehen sind. Über einen Besuch würde ich mich freuen!
       </p>
@@ -169,7 +169,8 @@ export default () => (
       <p>
         Haben Sie eine Frage zu einem meiner Projekte oder ein anderes Anliegen?
         Dann kontaktieren Sie mich über das folgende Formular &#8211;
-        oder senden Sie mir eine E-Mail an <a href="mailto:info@elias-kuiter.de">info@elias-kuiter.de</a>.
+        oder senden Sie mir eine E-Mail an <a href="mailto:info@elias-kuiter.de">info@elias-kuiter.de</a>
+        oder <a href="mailto:kuiter@ovgu.de">kuiter@ovgu.de</a>.
       </p>
 
       <form name="contact" method="POST" data-netlify="true">
@@ -190,6 +191,7 @@ export default () => (
 
       <Navigation style={{float: 'none'}} pages={[
           { title: 'GitHub', href: 'https://github.com/ekuiter' },
+          { title: 'Twitter', href: 'https://twitter.com/ekuiter' },
           { title: 'YouTube', href: 'https://youtube.com/ekuiter' },
           { title: 'Klaviernoten', href: 'https://piano.elias-kuiter.de' }
         ]} />
