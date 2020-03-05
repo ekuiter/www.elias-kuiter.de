@@ -24,7 +24,7 @@ const VitaEntry = ({ from, to, title, href, meta }) => (
     <td>
       {href
         ? <a href={href}>{title}</a>
-        : title}
+        : <span dangerouslySetInnerHTML={{__html: title}}></span>}
       {meta
           ? <span>. {meta}.</span>
           : null}
@@ -32,12 +32,12 @@ const VitaEntry = ({ from, to, title, href, meta }) => (
   </tr>
 );
 
-const Publication = ({ authors, title, href, publishedIn, meta, doi }) => (
+const Publication = ({ authors, title, pdf, publishedIn, meta, doi }) => (
   <li>
     {authors}.
     {' '}
-    {href
-      ? <span><a href={href}>{title}</a>.</span>
+    {pdf
+      ? <span><a href={pdf}>{title}</a>.</span>
       : <span>{title}.</span>}
     {' '}
     {publishedIn
@@ -46,9 +46,18 @@ const Publication = ({ authors, title, href, publishedIn, meta, doi }) => (
             ? <span>{meta}.</span>
             : null}
     {' '}
+    {pdf
+      ? <span>
+          <span className={`${styles.button} ${blackLinksStyles.blackLinks}`}>
+              <a href={pdf}>PDF</a>
+          </span>
+        </span>
+      : null}
     {doi
-      ? <span className={`${styles.doi} ${blackLinksStyles.blackLinks}`}>
-          <a href={`https://doi.org/${doi}`}>{doi}</a>
+      ? <span>
+          <span className={`${styles.button} ${blackLinksStyles.blackLinks}`}>
+              <a href={`https://doi.org/${doi}`}>DOI</a>
+          </span>
         </span>
       : null}
   </li>

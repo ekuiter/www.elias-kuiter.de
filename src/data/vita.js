@@ -6,22 +6,22 @@ export default [
   {
     from: '01.2019',
     to: '12.2019',
-    title: 'HiWi: Betreuung des Testbed in der AG Communication and Networked Systems'
+    title: 'HiWi: Betreuung des Testbed in der <a href="https:/comsys.ovgu.de/">AG Communication and Networked Systems</a>'
   },
   {
     from: '11.2018',
     to: '03.2019',
-    title: 'Bachelorpraktikum bei der METOP GmbH'
+    title: 'Bachelorpraktikum bei der <a href="https://metop.de/">METOP GmbH</a>'
   },
   {
     from: '04.2018',
     to: '09.2018',
-    title: 'HiWi: Software-Entwicklung in der AG Datenbanken und Software Engineering'
+    title: 'HiWi: Software-Entwicklung in der <a href="http://www.dbse.ovgu.de/">AG Datenbanken und Software Engineering</a>'
   },
   {
     from: '10.2017',
     to: '03.2018',
-    title: 'HiWi: Tutorien in der Lehrveranstaltung "Grundlagen der Theoretischen Informatik"'
+    title: 'HiWi: Tutor in der Lehrveranstaltung <a href="http://wwwisg.cs.uni-magdeburg.de/~stschirr/">Grundlagen der Theoretischen Informatik</a>'
   },
   {
     from: '2015',
