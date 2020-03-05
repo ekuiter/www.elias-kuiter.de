@@ -90,119 +90,132 @@ const Tool = ({ title, href, image, className }) => (
   </li>
 );
 
-export default () => (
-  <Layout className={layoutStyles.paddedHeaders}>
-    <section>
-      <div className={layoutStyles.space} />
-      <Image src="ich.jpg" fixed alt="Foto Elias" style={{float: 'right', margin: '0 0 15px 15px', border: '1px solid #888'}} />
+export default class extends React.Component {
+  componentDidMount() {
+    const pathName = document.location.pathname;
+    const element = window.location.hash && document.querySelector(window.location.hash);
+    if (window.scrollTo && element)
+      window.scrollTo(0, element.offsetTop);
+    else if (sessionStorage["scrollPosition_" + pathName])
+      window.scrollTo(0, parseInt(sessionStorage.getItem("scrollPosition_" + pathName)));
+  }
 
-      <p>
-        <strong>Hi! Mein Name ist Elias, ich bin 22 Jahre alt und ich studiere Informatik in Magdeburg.</strong>
-      </p>
-
-      <p>
-        Ich erstelle Ihre individuelle Web- oder Softwarelösung, zum Beispiel eine Webseite oder App.
-        Setzen Sie sich dazu einfach mit mir <Link to="/#kontakt">in Verbindung</Link>.
-        Oder Sie stöbern zunächst ein wenig in meinem <Link to="/#portfolio">Portfolio</Link>.
-      </p>
-
-      <p>
-        In der Informatik interessieren mich vor allem Themen des Software Engineering, unter anderem Software-Produktlinien.
-        Mehr dazu lesen Sie in meinen <Link to="/#publikationen">Publikationen</Link>.
-        Außerdem betreue ich einige Open-Source-Projekte wie den Heizungs-Datenlogger <a href="https://uvr2web.de">uvr2web</a>
-        {' '}
-        und den kollaborativen Feature-Modell-Editor <a href="https://github.com/ekuiter/variED">variED</a>.
-      </p>
-
-      <p>
-        In meiner Freizeit lese ich gern und spiele Klavier.
-        Ab und zu erstelle ich Klaviernoten zu Liedern, die auf meinem <a href="https://youtube.com/ekuiter">YouTube-Kanal</a>
-        {' '}
-        und meiner <a href="https://piano.elias-kuiter.de">Piano-Webseite</a> zu sehen sind. Über einen Besuch würde ich mich freuen!
-      </p>
-    </section>
-
-    <section id="vita">
-      <h3>Vita</h3>
-      <table>
-        <tbody>
-          {vita.map(vitaEntry => <VitaEntry key={vitaEntry.title + vitaEntry.href} {...vitaEntry} />)}
-        </tbody>
-      </table>
-    </section>
-
-    <section id="publikationen">
-      <h3>Publikationen</h3>
-      <ul>
-        {publications.map(publication => <Publication key={publication.title + publication.href} {...publication} />)}
-      </ul>
-    </section>
-
-    <section>
-      <h3>Auszeichnungen &amp; Förderung</h3>
-      <ul>
-        {awards.map(award => <Award key={award.title + award.href} {...award} />)}
-      </ul>
-    </section>
-
-    <section id="portfolio">
-      <h3>Portfolio</h3>
-
-      <p>
-        Hier sehen Sie eine Auswahl meiner Projekte &#8211; um mehr zu erfahren, einfach eines anklicken.
-      </p>
-
-      <ul className={styles.portfolio}>
-        {portfolio
-          .sort(({year: yearA, title: titleA}, {year: yearB, title: titleB}) =>
-            (yearB + titleB).localeCompare(yearA + titleA))
-          .map(project => <Project key={project.title + project.href} {...project} />)}
-      </ul>
-    </section>
+  render() {
+    return (
+      <Layout className={layoutStyles.paddedHeaders}>
+        <section>
+          <div className={layoutStyles.space} />
+          <Image src="ich.jpg" fixed alt="Foto Elias" style={{float: 'right', margin: '0 0 15px 15px', border: '1px solid #888'}} />
     
-    <section>
-      <h3>Technologien</h3>
-
-      <p>
-        Für die technische Umsetzung meiner Projekte verwende ich unter anderem folgende Technologien und Werkzeuge:
-      </p>
-
-      <ul className={styles.tools}>
-        {tools.map(tool => <Tool key={tool.title + tool.href} {...tool} />)}
-      </ul>
-    </section>
-
-    <section id="kontakt">
-      <h3>Kontakt</h3>
-
-      <p>
-        Haben Sie eine Frage zu einem meiner Projekte oder ein anderes Anliegen?
-        Dann kontaktieren Sie mich über das folgende Formular &#8211;
-        oder senden Sie mir eine E-Mail an <a href="mailto:info@elias-kuiter.de">info@elias-kuiter.de</a> oder <a href="mailto:kuiter@ovgu.de">kuiter@ovgu.de</a>.
-      </p>
-
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
-        <textarea name="message" placeholder="Ihre Nachricht" required />
-        <input type="checkbox" name="consent" id="consent" required />
-        <label for="consent">
-          Mit der Nutzung dieses Formulars erklären Sie sich mit der Speicherung und Verarbeitung
-          Ihrer Daten durch diese Website einverstanden.
-        </label>
-        <input type="submit" value="Abschicken" />
-      </form>
-    </section>
-
-    <section>
-      <h3>Siehe auch</h3>
-
-      <Navigation style={{float: 'none'}} pages={[
-          { title: 'GitHub', href: 'https://github.com/ekuiter' },
-          { title: 'Twitter', href: 'https://twitter.com/ekuiter' },
-          { title: 'YouTube', href: 'https://youtube.com/ekuiter' },
-          { title: 'Klaviernoten', href: 'https://piano.elias-kuiter.de' }
-        ]} />
-    </section>
-  </Layout>
-);
+          <p>
+            <strong>Hi! Mein Name ist Elias, ich bin 23 Jahre alt und ich studiere Informatik in Magdeburg.</strong>
+          </p>
+    
+          <p>
+            Ich erstelle Ihre individuelle Web- oder Softwarelösung, zum Beispiel eine Webseite oder App.
+            Setzen Sie sich dazu einfach mit mir <Link to="/#kontakt">in Verbindung</Link>.
+            Oder Sie stöbern zunächst ein wenig in meinem <Link to="/#portfolio">Portfolio</Link>.
+          </p>
+    
+          <p>
+            In der Informatik interessieren mich vor allem Themen des Software Engineering, unter anderem Software-Produktlinien.
+            Mehr dazu lesen Sie in meinen <Link to="/#publikationen">Publikationen</Link>.
+            Außerdem betreue ich einige Open-Source-Projekte wie den Heizungs-Datenlogger <a href="https://uvr2web.de">uvr2web</a>
+            {' '}
+            und den kollaborativen Feature-Modell-Editor <a href="https://github.com/ekuiter/variED">variED</a>.
+          </p>
+    
+          <p>
+            In meiner Freizeit lese ich gern und spiele Klavier.
+            Ab und zu erstelle ich Klaviernoten zu Liedern, die auf meinem <a href="https://youtube.com/ekuiter">YouTube-Kanal</a>
+            {' '}
+            und meiner <a href="https://piano.elias-kuiter.de">Piano-Webseite</a> zu sehen sind. Über einen Besuch würde ich mich freuen!
+          </p>
+        </section>
+    
+        <section id="vita">
+          <h3>Vita</h3>
+          <table>
+            <tbody>
+              {vita.map(vitaEntry => <VitaEntry key={vitaEntry.title + vitaEntry.href} {...vitaEntry} />)}
+            </tbody>
+          </table>
+        </section>
+    
+        <section id="publikationen">
+          <h3>Publikationen</h3>
+          <ul>
+            {publications.map(publication => <Publication key={publication.title + publication.href} {...publication} />)}
+          </ul>
+        </section>
+    
+        <section>
+          <h3>Auszeichnungen &amp; Förderung</h3>
+          <ul>
+            {awards.map(award => <Award key={award.title + award.href} {...award} />)}
+          </ul>
+        </section>
+    
+        <section id="portfolio">
+          <h3>Portfolio</h3>
+    
+          <p>
+            Hier sehen Sie eine Auswahl meiner Projekte &#8211; um mehr zu erfahren, einfach eines anklicken.
+          </p>
+    
+          <ul className={styles.portfolio}>
+            {portfolio
+              .sort(({year: yearA, title: titleA}, {year: yearB, title: titleB}) =>
+                (yearB + titleB).localeCompare(yearA + titleA))
+              .map(project => <Project key={project.title + project.href} {...project} />)}
+          </ul>
+        </section>
+        
+        <section>
+          <h3>Technologien</h3>
+    
+          <p>
+            Für die technische Umsetzung meiner Projekte verwende ich unter anderem folgende Technologien und Werkzeuge:
+          </p>
+    
+          <ul className={styles.tools}>
+            {tools.map(tool => <Tool key={tool.title + tool.href} {...tool} />)}
+          </ul>
+        </section>
+    
+        <section id="kontakt">
+          <h3>Kontakt</h3>
+    
+          <p>
+            Haben Sie eine Frage zu einem meiner Projekte oder ein anderes Anliegen?
+            Dann kontaktieren Sie mich über das folgende Formular &#8211;
+            oder senden Sie mir eine E-Mail an <a href="mailto:info@elias-kuiter.de">info@elias-kuiter.de</a> oder <a href="mailto:kuiter@ovgu.de">kuiter@ovgu.de</a>.
+          </p>
+    
+          <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
+            <textarea name="message" placeholder="Ihre Nachricht" required />
+            <input type="checkbox" name="consent" id="consent" required />
+            <label for="consent">
+              Mit der Nutzung dieses Formulars erklären Sie sich mit der Speicherung und Verarbeitung
+              Ihrer Daten durch diese Website einverstanden.
+            </label>
+            <input type="submit" value="Abschicken" />
+          </form>
+        </section>
+    
+        <section>
+          <h3>Siehe auch</h3>
+    
+          <Navigation style={{float: 'none'}} pages={[
+              { title: 'GitHub', href: 'https://github.com/ekuiter' },
+              { title: 'Twitter', href: 'https://twitter.com/ekuiter' },
+              { title: 'YouTube', href: 'https://youtube.com/ekuiter' },
+              { title: 'Klaviernoten', href: 'https://piano.elias-kuiter.de' }
+            ]} />
+        </section>
+      </Layout>
+    );
+  }
+};

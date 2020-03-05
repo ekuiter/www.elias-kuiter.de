@@ -1,7 +1,6 @@
 export const onInitialClientRender = () => {
-  window.setTimeout(function() {
-    const element = window.location.hash && document.querySelector(window.location.hash);
-    if (window.scrollTo && element)
-      window.scrollTo(0, element.offsetTop);
-  }, 100);
+  var pathName = document.location.pathname;
+  window.addEventListener('beforeunload', function() {
+      sessionStorage.setItem("scrollPosition_" + pathName, window.pageYOffset.toString());
+  });
 }
