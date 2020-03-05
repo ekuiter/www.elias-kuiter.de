@@ -6,6 +6,7 @@ a {
 }
 
 a:hover {
+    color: #4559f9;
     border-bottom: 1px solid #4559f9;
 }
 

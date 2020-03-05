@@ -4,5 +4,6 @@
 }
 
 .blackLinks a:hover {
+    color: rgba(0, 0, 0, 0.8);
     border-bottom-color: rgba(0, 0, 0, 0.8);
 }
