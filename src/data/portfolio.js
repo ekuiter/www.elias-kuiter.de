@@ -201,7 +201,7 @@ export default [
   },
 
   {
-    title: '"UnnamedOS"',
+    title: 'UnnamedOS',
     year: 2016,
     subtitle: '2016: Entwicklung des Betriebssystems',
     href: 'https://github.com/ekuiter/UnnamedOS',

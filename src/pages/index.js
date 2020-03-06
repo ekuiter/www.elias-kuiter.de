@@ -85,9 +85,13 @@ const Award = ({ title, href, meta }) => (
   </li>
 );
 
-const Project = ({ title, image, onClick, active }) => (
+const Project = ({ title, href, image, onClick, active, isClient }) => (
   <li className={`${styles.project} ${active ? styles.active : ''}`} onClick={onClick}>
-    <Image src={image} size="medium" />
+    {isClient
+    ? <Image src={image} size="medium" />
+    : <a href={href}>
+        <Image src={image} title={title} size="medium" />
+      </a>}
   </li>
 );
 
@@ -176,7 +180,7 @@ export default class extends React.Component {
         (yearB + titleB).localeCompare(yearA + titleA));
     const projectComponents = projects.map(project =>
       <Project key={projectKey(project)} {...project} onClick={this.onProjectClick(project)}
-        active={this.state.activeProjectKey === projectKey(project)} />);
+        active={this.state.activeProjectKey === projectKey(project)} isClient={this.state.isClient} />);
 
     if (this.state.isClient) {
       const _projectsPerRow = projectsPerRow[this.state.breakpoint];
