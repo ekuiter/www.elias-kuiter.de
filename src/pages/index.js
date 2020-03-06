@@ -1,4 +1,5 @@
 import React from 'react';
+import {BreakpointsProvider} from 'react-with-breakpoints';
 import Layout from '../components/layout';
 import Image from '../components/image';
 import Navigation from '../components/navigation';
@@ -11,6 +12,16 @@ import publications from '../data/publications';
 import awards from '../data/awards';
 import portfolio from '../data/portfolio';
 import tools from '../data/tools';
+
+const breakpoints = {
+  small: 720,
+  large: Infinity
+}
+
+const projectsPerRow = {
+  small: 2,
+  large: 3
+}
 
 const VitaEntry = ({ from, to, title, href, meta }) => (
   <tr>
@@ -74,13 +85,35 @@ const Award = ({ title, href, meta }) => (
   </li>
 );
 
-const Project = ({ title, href, image, year }) => (
-  <li>
-    {href
-      ? <a href={href}><Image src={image} title={`${title} (${year})`} size="medium" /></a>
-      : <Image src={`projects/${image}`} title={title} size="medium" />}
+const Project = ({ title, image, onClick, active }) => (
+  <li className={`${styles.project} ${active ? styles.active : ''}`} onClick={onClick}>
+    <Image src={image} size="medium" />
   </li>
 );
+
+const ProjectDescription = ({ title, subtitle, href, image, description, active }) => (
+  <li className={`${styles.description} ${active ? styles.active : ''}`}>
+    <div>
+      <div className={styles.image}>
+        <a href={href}>
+          <Image src={image} size="large" />
+        </a>
+      </div>
+      <h4>
+        <a href={href}>
+          <span>{title}</span> <span>{subtitle}</span>
+        </a>
+      </h4>
+      {description &&
+        <div className={styles.inner}>
+          {description}
+        </div>}
+      <div style={{clear: 'both'}} />
+    </div>
+  </li>
+);
+
+const projectKey = ({title, href}) => title + href;
 
 const Tool = ({ title, href, image, className }) => (
   <li className={className}>
@@ -91,21 +124,72 @@ const Tool = ({ title, href, image, className }) => (
 );
 
 export default class extends React.Component {
+  state = {
+    activeProjectKey: null,
+    breakpoint: window.innerWidth <= breakpoints.small ? 'small' : 'large'
+  };
+
+  onProjectClick = project => () =>
+    this.setState(({activeProjectKey}) => {
+      if (activeProjectKey === null)
+        return {activeProjectKey: projectKey(project)};
+
+      if (activeProjectKey !== projectKey(project)) {
+        //window.setTimeout(() => {
+        //  this.setState({activeProjectKey: projectKey(project)});
+        //}, 50);
+        return {activeProjectKey: projectKey(project)};
+      }
+      return {activeProjectKey: null};
+    });
+
+  onBreakpointChange = breakpoint =>
+    this.setState({breakpoint});
+
   componentDidMount() {
+    window.addEventListener('beforeunload', () => {
+      if (this.state.activeProjectKey)
+        sessionStorage.setItem('activeProjectKey', this.state.activeProjectKey);
+      else
+        sessionStorage.removeItem('activeProjectKey');
+    });
+
     const pathName = document.location.pathname;
     const element = window.location.hash && document.querySelector(window.location.hash);
     if (window.scrollTo && element)
       window.scrollTo(0, element.offsetTop);
     else if (sessionStorage["scrollPosition_" + pathName])
       window.scrollTo(0, parseInt(sessionStorage.getItem("scrollPosition_" + pathName)));
+
+    if (sessionStorage['activeProjectKey'])
+      this.setState({activeProjectKey: sessionStorage['activeProjectKey']});
   }
 
   render() {
+    const projects = portfolio
+      .sort(({year: yearA, title: titleA}, {year: yearB, title: titleB}) =>
+        (yearB + titleB).localeCompare(yearA + titleA));
+    const projectComponents = projects.map(project =>
+      <Project key={projectKey(project)} {...project} onClick={this.onProjectClick(project)}
+        active={this.state.activeProjectKey === projectKey(project)} />);
+
+    const _projectsPerRow = projectsPerRow[this.state.breakpoint];
+    for (var i = 0; i < projects.length; i++) {
+      const projectDescriptionIndex = (Math.floor(i / _projectsPerRow) + 1) * _projectsPerRow;
+      projectComponents.splice(i + projectDescriptionIndex, 0,
+        <ProjectDescription key={projectKey(projects[i]) + '_description'} {...projects[i]}
+          active={this.state.activeProjectKey === projectKey(projects[i])} />);
+    }
+
     return (
       <Layout className={layoutStyles.paddedHeaders}>
+        <BreakpointsProvider
+          breakpoints={breakpoints}
+          onBreakpointChange={this.onBreakpointChange} />
         <section>
           <div className={layoutStyles.space} />
-          <Image src="ich.jpg" fixed alt="Foto Elias" style={{float: 'right', margin: '0 0 15px 15px', border: '1px solid #888'}} />
+          <Image src="ich.jpg" fixed alt="Foto Elias"
+            style={{float: 'right', margin: '0 0 15px 15px', border: '1px solid #888'}} />
     
           <p>
             <strong>Hi! Mein Name ist Elias, ich bin 23 Jahre alt und ich studiere Informatik in Magdeburg.</strong>
@@ -164,10 +248,7 @@ export default class extends React.Component {
           </p>
     
           <ul className={styles.portfolio}>
-            {portfolio
-              .sort(({year: yearA, title: titleA}, {year: yearB, title: titleB}) =>
-                (yearB + titleB).localeCompare(yearA + titleA))
-              .map(project => <Project key={project.title + project.href} {...project} />)}
+            {projectComponents}
           </ul>
         </section>
         

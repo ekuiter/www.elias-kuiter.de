@@ -20,6 +20,7 @@
     "react-helmet": "^5.2.1",
     "react-scrollspy": "^3.4.0",
     "react-typography": "^0.16.19",
+    "react-with-breakpoints": "^4.0.4",
     "typography": "^0.16.19",
     "typography-theme-st-annes": "^0.16.19"
   },
