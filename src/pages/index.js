@@ -125,8 +125,11 @@ const Tool = ({ title, href, image, className }) => (
 
 export default class extends React.Component {
   state = {
+    isClient: false,
     activeProjectKey: null,
-    breakpoint: window.innerWidth <= breakpoints.small ? 'small' : 'large'
+    breakpoint: typeof window !== `undefined`
+      ? window.innerWidth <= breakpoints.small ? 'small' : 'large'
+      : null
   };
 
   onProjectClick = project => () =>
@@ -161,8 +164,10 @@ export default class extends React.Component {
     else if (sessionStorage["scrollPosition_" + pathName])
       window.scrollTo(0, parseInt(sessionStorage.getItem("scrollPosition_" + pathName)));
 
+    const newState = {isClient: true};
     if (sessionStorage['activeProjectKey'])
-      this.setState({activeProjectKey: sessionStorage['activeProjectKey']});
+      newState.activeProjectKey = sessionStorage['activeProjectKey'];
+    this.setState(newState);
   }
 
   render() {
@@ -173,12 +178,14 @@ export default class extends React.Component {
       <Project key={projectKey(project)} {...project} onClick={this.onProjectClick(project)}
         active={this.state.activeProjectKey === projectKey(project)} />);
 
-    const _projectsPerRow = projectsPerRow[this.state.breakpoint];
-    for (var i = 0; i < projects.length; i++) {
-      const projectDescriptionIndex = (Math.floor(i / _projectsPerRow) + 1) * _projectsPerRow;
-      projectComponents.splice(i + projectDescriptionIndex, 0,
-        <ProjectDescription key={projectKey(projects[i]) + '_description'} {...projects[i]}
-          active={this.state.activeProjectKey === projectKey(projects[i])} />);
+    if (this.state.isClient) {
+      const _projectsPerRow = projectsPerRow[this.state.breakpoint];
+      for (var i = 0; i < projects.length; i++) {
+        const projectDescriptionIndex = (Math.floor(i / _projectsPerRow) + 1) * _projectsPerRow;
+        projectComponents.splice(i + projectDescriptionIndex, 0,
+          <ProjectDescription key={projectKey(projects[i]) + '_description'} {...projects[i]}
+            active={this.state.activeProjectKey === projectKey(projects[i])} />);
+      }
     }
 
     return (
