@@ -6,7 +6,7 @@ export default [
   {
     from: '01.2019',
     to: '12.2019',
-    title: 'HiWi: Betreuung des Testbed in der <a href="https:/comsys.ovgu.de/">AG Communication and Networked Systems</a>'
+    title: 'HiWi: Betreuung des Testbed in der <a href="https://comsys.ovgu.de/">AG Communication and Networked Systems</a>'
   },
   {
     from: '11.2018',
