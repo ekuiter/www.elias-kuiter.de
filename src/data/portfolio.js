@@ -162,24 +162,6 @@ export default [
       )
     )
   },
-  
-  {
-    title: 'Meine alte Webseite',
-    year: 2015,
-    subtitle: '2015: Design der Webseite',
-    href: 'http://www-2015.elias-kuiter.de',
-    image: 'elias-kuiter.png',
-    description: description(
-      [
-        ['http://www-2015.elias-kuiter.de', 'Einen Blick riskieren'],
-        ['https://github.com/ekuiter/elias-kuiter-de-2015-frontend', 'Quelltext auf GitHub']
-      ], (
-          <>
-            Auf meiner alten Webseite finden Sie Informationen zu einigen weiteren, nicht mehr gepflegten Projekten.
-          </>
-      )
-    )
-  },
 
   {
     title: 'Meine Piano-Webseite',
