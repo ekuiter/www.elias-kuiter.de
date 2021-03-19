@@ -1,16 +1,2 @@
-/websites/*                             http://www-2015.elias-kuiter.de/websites/:splat
-/apps/*                                 http://www-2015.elias-kuiter.de/apps/:splat
-/elektronik/*                           http://www-2015.elias-kuiter.de/elektronik/:splat
-/sonstiges/*                            http://www-2015.elias-kuiter.de/sonstiges/:splat
-/facharbeit                             http://www-2015.elias-kuiter.de/sonstiges/facharbeit
 /ueber-mich                             /
 /piano                                  http://piano.elias-kuiter.de/
-/splc18-pclocator                       https://dl.elias-kuiter.de/splc18-pclocator.pdf
-/splc18-pclocator-slides                https://dl.elias-kuiter.de/splc18-pclocator-slides.pdf
-/splc18-uvr2web                         https://dl.elias-kuiter.de/splc18-uvr2web.pdf
-/fosd19-slides                          https://docs.google.com/presentation/d/1XnYuc9oO91vhFAdmwj9mqq7KERfDvCCbzYtWShbtfxw
-/splc19-foundations                     https://dl.elias-kuiter.de/splc19-foundations.pdf
-/splc19-foundations-artifact            https://dl.elias-kuiter.de/splc19-foundations-artifact.pdf
-/splc19-foundations-slides              https://dl.elias-kuiter.de/splc19-foundations-slides.pdf
-/thesis                                 https://dl.elias-kuiter.de/thesis.pdf
-/thesis-slides                          https://dl.elias-kuiter.de/thesis-slides.pdf

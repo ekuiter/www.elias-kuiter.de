@@ -203,7 +203,7 @@ export default class extends React.Component {
             style={{float: 'right', margin: '0 0 15px 15px', border: '1px solid #888'}} />
     
           <p>
-            <strong>Hi! Mein Name ist Elias, ich bin 23 Jahre alt und ich studiere Informatik in Magdeburg.</strong>
+            <strong>Hi! Mein Name ist Elias, ich bin 24 Jahre alt und ich studiere Informatik in Magdeburg.</strong>
           </p>
     
           <p>
@@ -221,8 +221,7 @@ export default class extends React.Component {
           </p>
     
           <p>
-            In meiner Freizeit lese ich gern und spiele Klavier.
-            Ab und zu erstelle ich Klaviernoten zu Liedern, die auf meinem <a href="https://youtube.com/ekuiter">YouTube-Kanal</a>
+            In meiner Freizeit erstelle ich ab und zu Klaviernoten zu Liedern, die auf meinem <a href="https://youtube.com/ekuiter">YouTube-Kanal</a>
             {' '}
             und meiner <a href="https://piano.elias-kuiter.de">Piano-Webseite</a> zu sehen sind. Über einen Besuch würde ich mich freuen!
           </p>

@@ -1,6 +1,11 @@
 export default [
   {
+    from: '2021',
+    title: 'Wissenschaftlicher Mitarbeiter in der <a href="http://www.dbse.ovgu.de/">AG Datenbanken und Software Engineering</a>'
+  },
+  {
     from: '2019',
+    to: '2021',
     title: 'Studium Informatik (Master of Science) an der Otto-von-Guericke-Universität Magdeburg'
   },
   {
