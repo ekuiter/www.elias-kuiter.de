@@ -230,7 +230,7 @@ export default [
     description: description(
       [
         ['https://github.com/ekuiter/PCLocator', 'Projekt-Webseite'],
-        ['http://www.elias-kuiter.de/splc18-pclocator', 'Paper']
+        ['http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/KuiterKK+2018:SPLC:challenge.pdf', 'Paper']
       ], (
           <>
             Der PCLocator unterstützt die Analyse von präprozessorbasiertem Programmcode in variablen Softwaresystemen.
@@ -250,7 +250,7 @@ export default [
       [
         ['https://github.com/ekuiter/variED', 'Projekt-Webseite'],
         ['http://varied.herokuapp.com', 'Online-Demo'],
-        ['http://www.elias-kuiter.de/thesis', 'Bachelorarbeit']
+        ['http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/Kuiter2019:BachelorThesis.pdf', 'Bachelorarbeit']
       ], (
           <>
             variED ist ein Forschungsprototyp zur kollaborativen Feature-Modellierung, der im Rahmen meiner Bachelorarbeit entstanden ist.

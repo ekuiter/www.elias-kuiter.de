@@ -279,21 +279,8 @@ export default class extends React.Component {
     
           <p>
             Haben Sie eine Frage zu einem meiner Projekte oder ein anderes Anliegen?
-            Dann kontaktieren Sie mich über das folgende Formular &#8211;
-            oder senden Sie mir eine E-Mail an <a href="mailto:info@elias-kuiter.de">info@elias-kuiter.de</a> oder <a href="mailto:kuiter@ovgu.de">kuiter@ovgu.de</a>.
+            Sie erreichen mich per E-Mail über <a href="mailto:info@elias-kuiter.de">info@elias-kuiter.de</a> oder <a href="mailto:kuiter@ovgu.de">kuiter@ovgu.de</a>.
           </p>
-    
-          <form name="contact" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
-            <textarea name="message" placeholder="Ihre Nachricht" required />
-            <input type="checkbox" name="consent" id="consent" required />
-            <label for="consent">
-              Mit der Nutzung dieses Formulars erklären Sie sich mit der Speicherung und Verarbeitung
-              Ihrer Daten durch diese Website einverstanden.
-            </label>
-            <input type="submit" value="Abschicken" />
-          </form>
         </section>
     
         <section>
