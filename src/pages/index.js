@@ -5,13 +5,12 @@ import Image from '../components/image';
 import Navigation from '../components/navigation';
 import styles from '../stylesheets/index.module.css';
 import layoutStyles from '../stylesheets/layout.module.css';
-import blackLinksStyles from '../stylesheets/blackLinks.module.css';
 import { Link } from 'gatsby';
 import vita from '../data/vita';
-import publications from '../data/publications';
 import awards from '../data/awards';
 import portfolio from '../data/portfolio';
 import tools from '../data/tools';
+import loading from '../images/loading.gif';
 
 const breakpoints = {
   small: 720,
@@ -41,37 +40,6 @@ const VitaEntry = ({ from, to, title, href, meta }) => (
           : null}
     </td>
   </tr>
-);
-
-const Publication = ({ authors, title, pdf, publishedIn, meta, doi }) => (
-  <li>
-    {authors}.
-    {' '}
-    {pdf
-      ? <span><a href={pdf}>{title}</a>.</span>
-      : <span>{title}.</span>}
-    {' '}
-    {publishedIn
-        ? <span>In <em>{publishedIn}</em>, {meta}.</span>
-        : meta
-            ? <span>{meta}.</span>
-            : null}
-    {' '}
-    {pdf
-      ? <span>
-          <span className={`${styles.button} ${blackLinksStyles.blackLinks}`}>
-              <a href={pdf}>PDF</a>
-          </span>
-        </span>
-      : null}
-    {doi
-      ? <span>
-          <span className={`${styles.button} ${blackLinksStyles.blackLinks}`}>
-              <a href={`https://doi.org/${doi}`}>DOI</a>
-          </span>
-        </span>
-      : null}
-  </li>
 );
 
 const Award = ({ title, href, meta }) => (
@@ -133,7 +101,8 @@ export default class extends React.Component {
     activeProjectKey: null,
     breakpoint: typeof window !== `undefined`
       ? window.innerWidth <= breakpoints.small ? 'small' : 'large'
-      : null
+      : null,
+    bib: null
   };
 
   onProjectClick = project => () =>
@@ -172,6 +141,10 @@ export default class extends React.Component {
     if (sessionStorage['activeProjectKey'])
       newState.activeProjectKey = sessionStorage['activeProjectKey'];
     this.setState(newState);
+
+    window.fetch("/bib.php")
+      .then(res => res.text())
+      .then(res => this.setState({bib: res.replaceAll("<br />&nbsp;", "").replaceAll("rgb(0, 104, 180)", "#dee1f9")}));
   }
 
   render() {
@@ -238,9 +211,10 @@ export default class extends React.Component {
     
         <section id="publikationen">
           <h3>Publikationen</h3>
-          <ul>
-            {publications.map(publication => <Publication key={publication.title + publication.href} {...publication} />)}
-          </ul>
+
+          {this.state.bib
+          ? <div dangerouslySetInnerHTML={{__html: this.state.bib}}></div>
+          : <img src={loading} alt="Wird geladen ..." />}
         </section>
     
         <section>
@@ -279,7 +253,7 @@ export default class extends React.Component {
     
           <p>
             Haben Sie eine Frage zu einem meiner Projekte oder ein anderes Anliegen?
-            Sie erreichen mich per E-Mail über <a href="mailto:info@elias-kuiter.de">info@elias-kuiter.de</a> oder <a href="mailto:kuiter@ovgu.de">kuiter@ovgu.de</a>.
+            Sie erreichen mich per E-Mail über <a href="mailto:kuiter@ovgu.de">kuiter@ovgu.de</a>.
           </p>
         </section>
     

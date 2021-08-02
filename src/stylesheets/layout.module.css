@@ -7,9 +7,13 @@
     line-height: 24px;
 }
 
-.layout h1, .layout h2, .layout h3, .layout h4, .layout h5, .layout h6, .layout .space {
+.layout h1, .layout h2, .layout h3, .layout h5, .layout h6, .layout .space {
     margin-top: 2.3rem;
     margin-bottom: 0.9rem;
+}
+
+.layout h4 {
+    margin-top: 1.3rem;
 }
 
 .layout p {
