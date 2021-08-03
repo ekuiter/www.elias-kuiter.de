@@ -194,9 +194,9 @@ export default class extends React.Component {
           </p>
     
           <p>
-            In meiner Freizeit erstelle ich ab und zu Klaviernoten zu Liedern, die auf meinem <a href="https://youtube.com/ekuiter">YouTube-Kanal</a>
+            In meiner Freizeit erstelle ich ab und zu Klavier- und Chor-Arrangements zu Liedern, die auf meinem <a href="https://youtube.com/ekuiter">YouTube-Kanal</a>
             {' '}
-            und meiner <a href="https://piano.elias-kuiter.de">Piano-Webseite</a> zu sehen sind. Über einen Besuch würde ich mich freuen!
+            und meiner <a href="https://music.elias-kuiter.de">Arrangement-Webseite</a> zu sehen sind. Über einen Besuch würde ich mich freuen!
           </p>
         </section>
     
@@ -264,7 +264,7 @@ export default class extends React.Component {
               { title: 'GitHub', href: 'https://github.com/ekuiter' },
               { title: 'Twitter', href: 'https://twitter.com/ekuiter' },
               { title: 'YouTube', href: 'https://youtube.com/ekuiter' },
-              { title: 'Klaviernoten', href: 'https://piano.elias-kuiter.de' }
+              { title: 'Arrangements', href: 'https://music.elias-kuiter.de' }
             ]} />
         </section>
       </Layout>

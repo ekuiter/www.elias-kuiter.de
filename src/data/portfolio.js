@@ -164,15 +164,15 @@ export default [
   },
 
   {
-    title: 'Meine Piano-Webseite',
+    title: 'Meine Arrangement-Webseite',
     year: 2016,
     subtitle: '2016: Design der Webseite',
-    href: 'https://piano.elias-kuiter.de',
+    href: 'https://music.elias-kuiter.de',
     image: 'elias-kuiter-piano.jpg',
     description: description(
       [
-        ['https://piano.elias-kuiter.de', 'Piano-Webseite'],
-        ['https://github.com/ekuiter/elias-kuiter-de-piano', 'Quelltext auf GitHub'],
+        ['https://music.elias-kuiter.de', 'Arrangement-Webseite'],
+        ['https://github.com/ekuiter/elias-kuiter-de-music', 'Quelltext auf GitHub'],
         ['https://www.youtube.com/watch?v=F50deTQaGV4', 'Ein Beispiel! 🎵']
       ], (
           <>
